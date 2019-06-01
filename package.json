@@ -3,22 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve": "concurrently \"nodemon db.js\" \"vue-cli-service serve\"",
+    "build": "vue-cli-service build",
     "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
-    "start": "node server.js",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "start": "concurrently \"node db.js\" \"node server.js\""
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
     "core-js": "^2.6.5",
+    "cors": "^2.8.5",
+    "crypto-js": "^3.1.9-1",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "mongodb": "^3.2.6",
+    "mongoose": "^5.5.11",
     "serve-static": "^1.14.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vuetify": "^1.5.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
-    "vue-template-compiler": "^2.6.10"
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.0.5",
+    "webpack": "^4.32.2"
   }
 }
